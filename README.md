@@ -57,7 +57,7 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 - Submit findings [using the C4 form](https://code4rena.com/contests/2024-02-althea-liquid-infrastructure/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts February 13, 2024 20:00 UTC 
-- Ends February 19,c 2024 20:00 UTC
+- Ends February 19, 2024 20:00 UTC
   
 ## Automated Findings / Publicly Known Issues
 
