@@ -1,0 +1,896 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/contracts/LiquidInfrastructureERC20.sol": {
+      "lastModificationDate": 1707497086848,
+      "contentHash": "c4096acb995e8ed5c4beb7a069ad951b",
+      "sourceName": "contracts/LiquidInfrastructureERC20.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "./LiquidInfrastructureNFT.sol"
+      ],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "LiquidInfrastructureERC20"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/contracts/LiquidInfrastructureNFT.sol": {
+      "lastModificationDate": 1707497086848,
+      "contentHash": "3c68373da7f04535849055d65a5aedf5",
+      "sourceName": "contracts/LiquidInfrastructureNFT.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "./OwnableApprovableERC721.sol"
+      ],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "LiquidInfrastructureNFT"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1707497087123,
+      "contentHash": "4fe56b59ced59d87df6b796758f62895",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+      "lastModificationDate": 1707497087127,
+      "contentHash": "53fbff678f378956efcb207fa748eaa6",
+      "sourceName": "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1707497087123,
+      "contentHash": "4e138d2b21c8844ab1799e37d232fb5e",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1707497087125,
+      "contentHash": "0eac3e1a83ee62326ca007811285b274",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1707497087125,
+      "contentHash": "2cd550cedf51b8d294607dad5023d717",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol": {
+      "lastModificationDate": 1707497087126,
+      "contentHash": "40c7a8a65c915b35f29a010df93b123e",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC721Receiver.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC721Holder"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol": {
+      "lastModificationDate": 1707497087124,
+      "contentHash": "e888f903b629e3ced11f5d1f85cda823",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC20.sol",
+        "../../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Burnable"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/contracts/OwnableApprovableERC721.sol": {
+      "lastModificationDate": 1707497086848,
+      "contentHash": "2cab7bfefccd63a142b8cdb4e4faf9a0",
+      "sourceName": "contracts/OwnableApprovableERC721.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/Context.sol",
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol"
+      ],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "OwnableApprovableERC721"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1707497087125,
+      "contentHash": "a4f6dccf3f15b6844e357f737a572388",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol",
+        "./IERC721Receiver.sol",
+        "./extensions/IERC721Metadata.sol",
+        "../../utils/Address.sol",
+        "../../utils/Context.sol",
+        "../../utils/Strings.sol",
+        "../../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC721"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1707497087123,
+      "contentHash": "851485d5b925529b1a2f34a0be077891",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1707497087124,
+      "contentHash": "62142442bed149f965c5ed971fae4182",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1707497087123,
+      "contentHash": "c5f6c4e4df069c789e7d84b4c3011913",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1707497087126,
+      "contentHash": "53919d6975f2c0f3dffee5e3a1064116",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1707497087126,
+      "contentHash": "9a367cecca6fed80a3e975b7e6b3bd5c",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Receiver"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1707497087123,
+      "contentHash": "a9a5319dff9088c6ffe757ea1c2a6729",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1707497087126,
+      "contentHash": "8aa69ca8424167555baaaa9f607801db",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Metadata"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1707497087123,
+      "contentHash": "9a04322bb8f6b8f2767d8358d1d2537b",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1707497087125,
+      "contentHash": "aa1be06992a99bb7393b26a6af3c4dfb",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/contracts/TestERC721A.sol": {
+      "lastModificationDate": 1707497086848,
+      "contentHash": "e2d2591d6af331e56ea58d14d3910cdd",
+      "sourceName": "contracts/TestERC721A.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol"
+      ],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "TestERC721A"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/contracts/TestERC20C.sol": {
+      "lastModificationDate": 1707497086848,
+      "contentHash": "1ef40b333096191f1ccf542b324c7254",
+      "sourceName": "contracts/TestERC20C.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "TestERC20C"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/contracts/TestERC20B.sol": {
+      "lastModificationDate": 1707497086848,
+      "contentHash": "9122d4609e7265dff161e9377d9dc659",
+      "sourceName": "contracts/TestERC20B.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "TestERC20B"
+      ]
+    },
+    "/home/cbo/2024-02-althea-liquid-infrastructure/liquid-infrastructure/contracts/TestERC20A.sol": {
+      "lastModificationDate": 1707497086848,
+      "contentHash": "e128147c276ad47b11e9f37494285c53",
+      "sourceName": "contracts/TestERC20A.sol",
+      "solcConfig": {
+        "version": "0.8.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.12"
+      ],
+      "artifacts": [
+        "TestERC20A"
+      ]
+    }
+  }
+}
