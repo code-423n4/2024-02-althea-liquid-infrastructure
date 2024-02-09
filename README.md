@@ -1,64 +1,20 @@
-# ✨ So you want to run an audit
-
-This `README.md` contains a set of checklists for our audit collaboration.
-
-Your audit will use two repos: 
-- **an _audit_ repo** (this one), which is used for scoping your audit and for providing information to wardens
-- **a _findings_ repo**, where issues are submitted (shared with you after the audit) 
-
-Ultimately, when we launch the audit, this repo will be made public and will contain the smart contracts to be reviewed and all the information needed for audit participants. The findings repo will be made public after the audit report is published and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the audit sponsor (⭐️)**.
-
----
-
-# Repo setup
-
-## ⭐️ Sponsor: Add code to this repo
-
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-
----
-
-## ⭐️ Sponsor: Edit this `README.md` file
-
-- [ ] Modify the contents of this `README.md` file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. (Here are two well-constructed examples: [Ajna Protocol](https://github.com/code-423n4/2023-05-ajna) and [Maia DAO Ecosystem](https://github.com/code-423n4/2023-05-maia))
-- [ ] Review the Gas award pool amount. This can be adjusted up or down, based on your preference - just flag it for Code4rena staff so we can update the pool totals across all comms channels.
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] [This checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746) provides some best practices for Code4rena audits.
-
-## ⭐️ Sponsor: Final touches
-- [ ] Review and confirm the details in the section titled "Scoping details" and alert Code4rena staff of any changes.
-- [ ] Review and confirm the list of in-scope files in the `scope.txt` file in this directory.  Any files not listed as "in scope" will be considered out of scope for the purposes of judging, even if the file will be part of the deployed contracts.
-- [ ] Check that images and other files used in this README have been uploaded to the repo as a file and then linked in the README using absolute path (e.g. `https://github.com/code-423n4/yourrepo-url/filepath.png`)
-- [ ] Ensure that *all* links and image/file paths in this README use absolute paths, not relative paths
-- [ ] Check that all README information is in markdown format (HTML does not render on Code4rena.com)
-- [ ] Remove any part of this template that's not relevant to the final version of the README (e.g. instructions in brackets and italic)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
 # Althea Liquid Infrastructure audit details
-- Total Prize Pool: $24,500 in USDC 
-  - HM awards: $16,500 in USDC 
-  - Analysis awards: $1,000 in USDC 
-  - QA awards: $500 in USDC 
-  - Bot Race awards: $1,500 in USDC 
-  - Gas awards: $500 in USDC 
-  - Judge awards: $2,400 in USDC 
-  - Lookout awards: $1,600 in USDC 
-  - Scout awards: $500 in USDC 
+
+- Total Prize Pool: $24,500 in USDC
+  - HM awards: $16,500 in USDC
+  - Analysis awards: $1,000 in USDC
+  - QA awards: $500 in USDC
+  - Bot Race awards: $1,500 in USDC
+  - Gas awards: $500 in USDC
+  - Judge awards: $2,400 in USDC
+  - Lookout awards: $1,600 in USDC
+  - Scout awards: $500 in USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2024-02-althea-liquid-infrastructure/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts February 13, 2024 20:00 UTC 
+- Starts February 13, 2024 20:00 UTC
 - Ends February 19, 2024 20:00 UTC
-  
+
 ## Automated Findings / Publicly Known Issues
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2024-02-althea-liquid-infrastructure/blob/main/4naly3er-report.md).
@@ -67,88 +23,80 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
-[ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
-
-
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+## About Liquid Infrastructure
+
+Liquid Infrastructure is a protocol to enable the tokenization and investment in real world assets which accrue revenue on-chain, and will be deployed on the Althea-L1 blockchain after launch.
+The protocol consists of tokenized real world assets represented on-chain by deployed LiquidInfrastructureNFT contracts, and the LiquidInfrastructureERC20 token that functions to aggregate and distribute revenue proportionally to holders.
+LiquidInfrastructureNFTs are flexible enough to represent devices like routers participating in Althea's pay-per-forward billing protocol, vending machines, renewable energy infrastructure, or electric car chargers.
+Liquid Infrastructure makes it possible to automatically manage these tokenized assets and arbitrarily group them, creating ERC20 tokens that represent real world assets of various classes.
+
+Althea-L1 is a Cosmos SDK chain with an EVM compatibility layer, and the Liquid Infrastructure contracts make mention of several features that the chain will bring to Liquid Infrastructure.
+The Althea-L1 chain and its functionality provided by Cosmos SDK modules (e.g. x/bank, x/microtx, ...) are all out of scope for this audit.
 
 ## Links
 
-- **Previous audits:** 
-- **Documentation:**
-- **Website:**
-- **Twitter:** 
-- **Discord:** 
-
+- [Liquid Infrastructure](https://www.althea.net/liquid-infrastructure)
+- [Twitter](https://twitter.com/AltheaNetwork)
+- [Discord](https://discord.gg/hHx7HxcycF)
 
 # Scope
 
-[ ⭐️ SPONSORS: add scoping and technical details here ]
-
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each *For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc).* 
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
-
-*List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus.*
-
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+| Contract                                                                                                                                                                    | SLOC | Purpose                                                                                                          | Libraries used                                                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [LiquidInfrastructureERC20.sol](https://github.com/code-423n4/2024-02-althea-liquid-infrastructure/blob/main/liquid-infrastructure/contracts/LiquidInfrastructureERC20.sol) | 270  | This ERC20 withdraws revenue from its managed LiquidInfrastructureNFTs and distributes proportionally to holders | [`@openzeppelin/*`](https://openzeppelin.com/contracts/)                                                                                                                                                                       |
+| [LiquidInfrastructureNFT.sol](https://github.com/code-423n4/2024-02-althea-liquid-infrastructure/blob/main/liquid-infrastructure/contracts/LiquidInfrastructureNFT.sol)     | 88   | This ERC721 accumulates ERC20 balances and enables permissioned balance withdrawals                              | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) [`OwnableApprovableERC721`](https://github.com/code-423n4/2024-02-althea-liquid-infrastructure/blob/main/liquid-infrastructure/contracts/OwnableApprovableERC721.sol) |
+| [OwnableApprovableERC721.sol](https://github.com/code-423n4/2024-02-althea-liquid-infrastructure/blob/main/liquid-infrastructure/contracts/OwnableApprovableERC721.sol)     | 19   | This abstract contract provides modifiers based on ownership and approval status of ERC721 tokens                | [`@openzeppelin/*`](https://openzeppelin.com/contracts/)                                                                                                                                                                       |
 
 ## Out of scope
 
-*List any files/contracts that are out of scope for this audit.*
+- All of the `Test*` contracts, which are simple testing contracts used to test ERC20 balance accumulation.
+- Althea-L1 and all Cosmos modules including the Bank (`x/bank`) and Microtx (`x/microtx`) modules mentioned in `LiquidInfrastructureNFT.sol`, and any interaction between Cosmos modules and the in-scope contracts should not be considered.
 
 # Additional Context
 
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Please list specific ERC20 that your protocol is anticipated to interact with. Could be "any" (literally anything, fee on transfer tokens, ERC777 tokens and so forth) or a list of tokens you envision using on launch.
-- [ ] Please list specific ERC721 that your protocol is anticipated to interact with.
-- [ ] Which blockchains will this code be deployed to, and are considered in scope for this audit?
-- [ ] Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable
-- [ ] In the event of a DOS, could you outline a minimum duration after which you would consider a finding to be valid? This question is asked in the context of most systems' capacity to handle DoS attacks gracefully for a certain period.
-- [ ] Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format: 
-  - `Contract1`: Should comply with `ERC/EIPX`
-  - `Contract2`: Should comply with `ERC/EIPY`
+- `LiquidInfrastructureERC20.sol` is expected to facilitate a KYC (Know Your Customer) process to restrict which addresses are allowed to hold an ERC20 balance.
+- LiquidInfrastructureNFT.sol's threshold variables (`thresholdErc20s`, `thresholdAmounts`) and functions (`getThresholds()`, `setThresholds()`), and recovery functionality through `recoverAccount()` are all specific to deployment on Althea-L1. These fields and values should offer no effective functionality on other EVM chains. They are not out of scope, but the interaction between these values and any Cosmos modules should not be considered.
+- Liquid Infrastructure is expected to use ERC20 stablecoins like USDC, Dai, or USDT as revenue tokens. The protocol is expected to vet ERC20s and opt-in to their use to avoid issues with non-standard tokens (e.g. rebasing tokens).
+- `LiquidInfrastructureERC20.sol` should comply with ERC20 standard, except that `transfer()` must not work during an active distribution and `mint()` and `burn()` should not work when the minimum distribution period has elapsed.
+- `LiquidInfrastructureNFT.sol` should comply with ERC721 standard and contain a single token with ID `1`.
+- Each `LiquidInfrastructureNFT.sol` is expected to have a single owner address for the only token contained by the contract. The owner should have typical permissions, with the added ability to withdraw ERC20 balances held by the NFT. LiquidInfrastructureNFTs may or may not be managed by a LiquidInfrastructureERC20, in which case the ERC20 must be able to withdraw balances.
 
 ## Attack ideas (Where to look for bugs)
-*List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
 
-## Main invariants
-*Describe the project's main invariants (properties that should NEVER EVER be broken).*
+- Errors in the distribution to holders, such as the ability to take rewards entitled to another holder
 
-## Scoping Details 
-[ ⭐️ SPONSORS: please confirm/edit the information below. ]
+- DoS attacks against the LiquidInfrastructureERC20 are of significant concern, particularly if there is a way to permanently trigger out of gas errors
+
+- Acquiring the ERC20 (and therefore rewards) without approval is another significant concern
+
+## Scoping Details
 
 ```
-- If you have a public code repo, please share it here:  
-- How many contracts are in scope?:   
-- Total SLoC for these contracts?:  
-- How many external imports are there?:  
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  
-- Does most of your code generally use composition or inheritance?:   
-- How many external calls?:   
-- What is the overall line coverage percentage provided by your tests?:
-- Is this an upgrade of an existing system?:
-- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): 
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   
-- Please describe required context:   
-- Does it use an oracle?:  
-- Describe any novel or unique curve logic or mathematical models your code uses: 
-- Is this either a fork of or an alternate implementation of another project?:   
-- Does it use a side-chain?:
+- If you have a public code repo, please share it here: https://github.com/althea-net/liquid-infrastructure-contracts
+- How many contracts are in scope?: 3
+- Total SLoC for these contracts?: 377
+- How many external imports are there?: 9
+- How many separate interfaces and struct definitions are there for the contracts within scope?: 0 interfaces 0 structs
+- Does most of your code generally use composition or inheritance?: Inheritance
+- How many external calls?: 9
+- What is the overall line coverage percentage provided by your tests?: 95.09
+- Is this an upgrade of an existing system?: No
+- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): NFT, ERC20
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?: No
+- Please describe required context:
+- Does it use an oracle?: No
+- Describe any novel or unique curve logic or mathematical models your code uses:
+- Is this either a fork of or an alternate implementation of another project?: No
+- Does it use a side-chain?: No
 - Describe any specific areas you would like addressed:
 ```
 
 # Tests
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
-
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+See README.md in the `liquid-infrastructure` directory for compliation and testing instructions.
 
 ## Miscellaneous
 
-Employees of [SPONSOR NAME] and employees' family members are ineligible to participate in this audit.
+Employees of Althea, Hawk Networks and employees' family members are ineligible to participate in this audit.
