@@ -1,0 +1,3 @@
+liquid-infrastructure/contracts/LiquidInfrastructureERC20.sol
+liquid-infrastructure/contracts/LiquidInfrastructureNFT.sol
+liquid-infrastructure/contracts/OwnableApprovableERC721.sol
