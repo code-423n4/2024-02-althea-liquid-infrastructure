@@ -23,10 +23,10 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
-Some of the variables in LiquidInfrastructureNFT.sol will have no effect on most EVM chains (in particular: `thresholdErc20s`, `thresholdAmounts`, `getThresholds()`, `setThresholds()`, and `recoverAccount()`).
+The following are intended design and aren't considered issues:
+* Some of the variables in LiquidInfrastructureNFT.sol will have no effect on most EVM chains (in particular: `thresholdErc20s`, `thresholdAmounts`, `getThresholds()`, `setThresholds()`, and `recoverAccount()`).
 These values and functions are all specific to deployment on Althea-L1 and will interact with Althea-L1's Cosmos module functionality. These contract elements are not out of scope, but the interaction between these elements and any Cosmos modules should not be considered.
-
-In order to simplify the distribution logic and accounting of LiquidInfrastructureERC20.sol, many contract functions periodically become blocked.
+* In order to simplify the distribution logic and accounting of LiquidInfrastructureERC20.sol, many contract functions periodically become blocked.
 During a revenue distribution all token transfers should be blocked (including mints and burns).
 If a distribution has not happened in at least `MinDistributionPeriod` blocks then all mints and burns should be blocked.
 
