@@ -1,0 +1,1412 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q1-2024 / althea-feb13
+==============================================================
+
+[02/07/2024 02:17] knownfactc4_29311 (pinned)
+👋 Hello and welcome to the audit channel for the $24,500 in USDC **Althea Liquid Infrastructure** audit!
+
+📆 Audit opens 02/13/2024 20:00 (20:00 UTC) and runs through 02/19/2024 20:00 (20:00 UTC) (6 days).
+
+Please give a warm welcome to the Althea team, particularly @Christian | Althea and @Justin | Althea, who will be available for questions either here in the channel or via DM in the EST timezone.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/audits/2024-02-althea-liquid-infrastructure
+
+{Reactions}
+hi5 (6) 
+
+[02/07/2024 02:17] knownfactc4_29311
+Pinned a message.
+
+
+[02/07/2024 17:53] judeabara
+Hi good evening
+
+
+[02/07/2024 17:53] judeabara
+Is althea written using Solidity?
+
+
+[02/07/2024 20:18] kartoonjoy
+Hey wardens, lets please minimize conversations, in this channel. Thanks!
+
+{Reactions}
+❓ (3) 
+
+[02/08/2024 21:22] ttk3.1
+Liquid Infrastructure is written using Solidity. Althea as a whole uses Rust and C for the routing and networking and Go for the blockchain.
+
+{Reactions}
+👍 (18) 👀 (4) 
+
+[02/13/2024 20:02] C4 (pinned)
+**Automated Findings / Publicly Known Issues**
+
+Reminder: all [Automated Findings / Publicly Known Issues](https://github.com/code-423n4/2024-02-althea-liquid-infrastructure#automated-findings--publicly-known-issues) are out of scope and ineligible for awards.
+
+
+[02/13/2024 20:02] haxatron1
+Where are the details for this one?
+
+
+[02/13/2024 20:02] haxatron1
+Looks like it was mistakenly set to private audit
+
+
+[02/13/2024 20:03] haxatron1
+@kartoonjoy | C4🎇🎇 ^
+
+
+[02/13/2024 20:03] uchedev
+Is this a private audit?
+
+
+[02/13/2024 20:03] brivan
+Since this channel was created before, it shouldn't
+
+{Reactions}
+👍 
+
+[02/13/2024 20:03] aodkgkrogrogoovg2o3btivr
+If there are private audits on c4 just put a ``PRIVATE CONTEST``  to be sure for everyone
+
+{Reactions}
+👆 
+
+[02/13/2024 20:04] hgq2wnl
+you can submit findings for this one it seems + does not have "Invitational" in the title, so it seems like it isn't meant to be private? idk
+
+
+[02/13/2024 20:04] haxatron1
+Page is set to private audit mode :/https://code4rena.com/audits/2024-02-althea-liquid-infrastructure
+
+
+[02/13/2024 20:04] bronze_pickaxe
+im sure the c4 team will fix it
+
+{Reactions}
+thankyou 
+
+[02/13/2024 20:04] hgq2wnl
+ah fixed
+
+
+[02/13/2024 20:04] hgq2wnl
+gg
+
+
+[02/13/2024 20:04] haxatron1
+Nvm it was just fixed
+
+
+[02/13/2024 20:05] haxatron1
+Cant wait for 2000 issues for this one
+
+{Reactions}
+🤣 (6) 
+
+[02/13/2024 20:05] sp1cymeatball
+350 SLOC, the dupes for this one will be legendary
+
+{Reactions}
+😂 (6) 
+
+[02/13/2024 20:06] thebrittfactor
+Yep! We're thinking it was just a weird delay issue. Y'all should be all set 🙂
+
+
+[02/13/2024 20:06] thebrittfactor
+Pinned a message.
+
+
+[02/14/2024 12:18] clemhate
+Hey team, could i ask some questions on the contract for the dev team ?
+
+
+[02/14/2024 13:42] novamanbg
+Which tokens do you expect to interact with the protocol?
+
+{Reactions}
+➕ (2) 👀 (2) 
+
+[02/14/2024 15:20] christianalthea
+Go ahead and ask away in this channel, I believe that private channels are something lots of wardens use and we will be monitoring those
+
+
+[02/14/2024 15:22] christianalthea
+We're anticipating stablecoins, and most likely a single stablecoin like USDC. In particular the protocol was not designed for rebasing tokens or anything where balances get adjusted unexpectedly.
+
+
+[02/14/2024 15:34] clemhate
+What do you think of when talking about minimum time between distributions ? 1-10-100days/hours/blocks ?
+
+
+[02/14/2024 15:37] christianalthea
+The most likely configuration would be roughly weekly or monthly, based on average block times.
+
+
+[02/14/2024 16:09] clemhate
+Okay thanks
+
+
+[02/14/2024 16:41] 0xsimeon
+What about USDT?
+
+
+[02/14/2024 17:00] sa3083
+what exactly is the relation between the LiquidInfrastructureERC20 and LiquidInfrastructureNFT ?  (e.g: many-many, one-to-many etc)
+
+{Reactions}
+➕ 
+
+[02/14/2024 17:26] aaryannair
+Ive just submitted an audit for gas optimisation. Can someone please check
+
+
+[02/14/2024 17:35] thebrittfactor
+When logged into the C4 website, you should be able to view your findings here:
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - althea-feb13 [1204153452733800448].txt_Files/image-B38A4.png
+
+{Reactions}
+👍 
+
+[02/14/2024 17:39] christianalthea
+The choice of token(s) will be determined by the real world assets being managed by Liquid Infrastructure. We're anticipating most of the assets on Althea-L1 to transact in USDC. It would certainly be possible for that to change and use USDT, or for someone to represent assets which transact in USDT instead and that should be a supported case.
+
+
+[02/14/2024 17:42] christianalthea
+One LiquidInfrastructureERC20 will own many LiquidInfrastructureNFT. It should not be possible for one LiquidInfrastructureNFT to be managed by multiple LiquidInfrastructureERC20. There's nothing stopping multiple LiquidInfrastructureERC20 deployments and this would probably make the most sense for different assets (e.g. one ERC20 representing electric car chargers, another for different Althea networks deployed in various countries, another for vending machines, etc.)
+
+
+[02/14/2024 18:25] sa3083
+If erc20 represents the assets (e.g: electric car chargers ), what’s the role of the nft in this case ? I can’t figure that out from docs
+
+
+[02/14/2024 18:44] christianalthea
+The ERC20 manages multiple assets, the NFTs are the tokenized assets.
+
+
+[02/14/2024 20:52] Message Wolf#0225 (pinned)
+**Automated Findings / Publicly Known Issues**
+
+Automated findings output for the audit can be found [here](https://github.com/code-423n4/2024-02-althea-liquid-infrastructure/blob/main/bot-report.md).
+
+*Note for C4 wardens: Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.*
+
+
+[02/14/2024 21:08] thebrittfactor
+Pinned a message.
+
+
+[02/14/2024 21:32] max10afternoon
+@Christian | Althea Are the owners of the NFTs considered trusted entities?
+
+
+[02/14/2024 23:59] christianalthea
+No, but the NFT contracts themselves must be trustworthy. Once a LiquidInfrastructureNFT is transferred to the LiquidInfrastructureERC20, the "owner" of the ERC20 is required to add it as a ManagedNFT for the LiquidInfrastructureERC20 to attempt to withdraw balances from it.
+
+
+[02/15/2024 00:01] max10afternoon
+Ok, thanks!
+
+{Reactions}
+👍 
+
+[02/15/2024 07:38] aaryannair
+@Christian | Althea  When can we see any progress in reported bug report ? Ive submitted 2 audit I dont see any update on them.
+
+
+[02/15/2024 07:41] aaryannair
+That link you shared doesnt seem to work.
+
+
+[02/15/2024 08:55] johnsmith1623
+Maybe check out this
+https://docs.code4rena.com/structure/our-process
+
+{Embed}
+https://docs.code4rena.com/structure/our-process
+Audit timeline
+This is a high level overview of the C4 audit timeline. We have an increasingly detailed operational manual in Notion.
+
+
+[02/15/2024 09:02] aaryannair
+That helped. Thanks @JohnSmith
+
+
+[02/15/2024 09:16] st3fanovdav1d
+LiquidInfrastructureNFT has a variable Version, does this mean it's  upgradeable ?
+
+
+[02/15/2024 10:54] aripse
+Think I really need more context : Who own what ?
+Concrete example: Car chargers industry.
+Does any company wanting to sale chargers, have to deploy the Althea blockchain, deploy the ERC20 and each provider have to mint one NFT on this chain ?
+Or you’ve planned there is one althea blockchain per country, one ERC20 per industry/field/product, and a lot of NFT per provider for each product  ?
+Is Althea the owner of each LiquidityERC20 token on each deployed blockchain ?
+
+
+[02/15/2024 10:57] aripse
+Does the deployer of the blockchain have to be the owner of the ERC20 ? Is the owner have to be a multi-sig wallet shared by all provider for one industry ?
+
+
+[02/15/2024 11:04] haxatron1
+Wait so here we really do sell cables???
+
+
+[02/15/2024 11:04] aripse
+Since it is a real estate protocol, I assume yes.
+
+
+[02/15/2024 12:14] nzlatev7
+Do you have any example, which implement the erc20 infrastructure? To see there for more info?
+
+
+[02/15/2024 12:16] masol_66728
+on what chain is this expected to be deployed ?
+
+
+[02/15/2024 13:14] shealtielanz
+no, it will have newer versions released in future but the contracts aren't upgradeable
+
+
+[02/15/2024 13:14] st3fanovdav1d
+Ok, thanks!
+
+{Reactions}
+👍🏻 
+
+[02/15/2024 13:33] thisvishalsingh
+is it forked from any?
+
+
+[02/15/2024 13:35] thisvishalsingh
+What is the protocol category?
+
+
+[02/15/2024 13:39] jvorex
+not a fork
+
+{Reactions}
+👍 
+
+[02/15/2024 14:04] thisvishalsingh
+@Christian | Althea  How you are going to use the Althea-L1 blockchain  in this infra contracts?
+
+
+[02/15/2024 15:14] 0xtendency
+Please check pt @Christian | Althea @Justin | Althea
+
+
+[02/15/2024 15:58] sa3083
+What entities would be the owner of LiquidInfrastrctureNFT? Should they be treated as trusted ?
+
+
+[02/15/2024 16:25] christianalthea
+No, it's not directly upgradeable. However we may change the NFT logic and have multiple different versions of NFTs deployed which external contracts can interact with.
+
+{Reactions}
+thankyou (2) 
+
+[02/15/2024 16:29] christianalthea
+There will be one Althea-L1 blockchain, and one LiquidInfrastructureNFT for any crypto-enabled real world asset that accrues revenue. These NFTs are not very liquid by themselves as they require manual management of their revenue flows so they can be bundled together under a LiquidInfrastructureERC20 as an asset class. The ERC20 manages revenue distribution and the owner of the ERC20 can mint new tokens and approve new holders as they please - this makes investment simple.
+
+Initially we expect Althea to be the deployer and manager of just one LiquidInfrastructureERC20 with a few LiquidInfrastructureNFTs under management, however it will be open source so anyone could deploy the contracts for their own protocol as they see fit.
+
+
+[02/15/2024 16:30] 0xjuancito
+Is frontrunning possible in Althea?
+
+
+[02/15/2024 16:39] christianalthea
+Althea is a protocol that enables flexible mesh networking through peer-to-peer payments, typically a WiFi router in a home is connected via antenna or fiber to another upstream router and that one to another until the network reaches the open internet. The routers pay each other stablecoin ERC20s for the bandwidth they consume - usually between 5 cents and 25 cents. Beyond internet service, Althea makes it possible for devices to pay each other for anything.
+
+Liquid Infrastructure makes it simple for people to invest in these networks by purchasing an ERC20, automatically accruing revenue over time as the tokenized assets funnel stablecoins through the LiquidInfrastructureNFT and from there to the LiquidInfrastructureERC20.
+
+
+[02/15/2024 16:40] haxatron1
+check privat ethread
+
+
+[02/15/2024 16:48] christianalthea
+Once Althea-L1 is deployed, real-world devices will have accounts on the chain. They will use these accounts to send and receive ERC20 tokens for a service, most likely because they are part of the Althea internet service protocol. Each device account can opt-in to becoming a Liquid account - they will have a LiquidInfrastructureNFT deployed and will automatically forward balances beyond a configured threshold to the NFT. Althea-L1 the chain will manage the flow of stablecoins from the device accounts to the LiquidInfrastructureNFT.
+
+If these LiquidInfrastructureNFTs are managed under a LiquidInfrastructureERC20, the LiquidInfrastructureERC20 will periodically withdraw stablecoin revenue from the NFTs and distribute the revenue proportionally to holders of the LiquidInfrastructureERC20.
+
+Liquid Infrastructure has not been deployed yet but will be shortly after the launch of the Althea-L1 chain.
+
+{Reactions}
+👍 
+
+[02/15/2024 16:50] christianalthea
+The Althea-L1 blockchain will perform 2 critical functions for Liquid Infrastructure:
+1. Althea-L1 will host the smart contracts on the EVM the chain runs
+2. Althea-L1 will automatically funnel revenue from real-world device accounts to their registered LiquidInfrastructureNFTs. From there Liquid Infrastructure will work according to the smart contract behavior.
+
+
+[02/15/2024 16:52] christianalthea
+I believe that would require a market to be available, and would heavily depend on the market implementation. I do not think it's possible to have that be in scope for this audit.
+
+
+[02/15/2024 16:57] 0xjuancito
+I mean if it is possible in the Althea-L1 blockchain, like if it has a mempool
+
+
+[02/15/2024 17:21] christianalthea
+Althea-L1 will have a mempool, but I don't understand where the frontrunning attack would come in with just these contracts. If you're able to manipulate the distribution of revenue to holders or holder balances through frontrunning that would be a significant issue.
+
+
+[02/15/2024 17:28] 0xjuancito
+Just trying to understand the attack surface. Thanks for the feedback!
+
+{Reactions}
+👍 (2) 
+
+[02/15/2024 18:31] nzlatev7
+`mint` function in the `LiquidInfrastructureERC20` contract has a modifier `onlyOwner`, how to expect this to work, the owner will call every tx or will have additional checks from another contract? How the owner will determine for which account  and the amount of tokens to mint?
+
+
+[02/15/2024 18:49] christianalthea
+The only way to issue new tokens would be for the owner of the contract to call mint. The only other way to acquire the LiquidInfrastructureERC20 should be through a marketplace or for direct sales between approved holders. The aim is to allow investors to fund the development of further Liquid Infrastructure projects and receive the LiquidInfrastructureERC20 in exchange. However this is all at the owner's discretion.
+
+{Reactions}
+👍 
+
+[02/15/2024 19:07] sovaslava9
+Could you write addreses of tokens, which will be distributed?
+
+
+[02/15/2024 20:54] christianalthea
+So for Althea-L1 we plan on bridging USDC from Ethereum Mainnet using Gravity Bridge. Since Althea-L1 is not live yet the contract address does not exist yet.
+
+{Reactions}
+🙏🏼 
+
+[02/15/2024 22:59] shealtielanz
+quick question, will the contracts in althea be called  via L1 to L2 calls through the bridges?
+
+
+[02/16/2024 01:04] gladita
+why are _beforeTokenTransfer and _afterTokenTransfer labeled both virtual & override? I understand why they're override but why virtual
+
+
+[02/16/2024 06:38] tayzver
+@Christian | Althea can i DM?
+
+
+[02/16/2024 11:22] chris0xff
+@nocoder i think that allows them to be over ridden again in downstream inheritance?
+
+{Reactions}
+👍 (2) 
+
+[02/16/2024 11:24] zaevlad
+@Christian | Althea I'm confused, does Althea work with L2 chains, like Optimism?
+
+
+[02/16/2024 14:09] gladita
+thanks
+
+
+[02/16/2024 14:42] kriko.eth
+Hi, is my understanding correct that any user can launch an ERC20 token?
+
+
+[02/16/2024 15:11] christianalthea
+Althea-L1 will be its own L1 chain and likely will not interact with any L2's. The contracts will interact with tokens bridged to Althea-L1 and potentially native ERC20s.
+
+
+[02/16/2024 15:13] christianalthea
+Virtual shouldn't impact the implementation of the LiquidInfrastructureERC20, but it makes future development of different contracts more flexible.
+
+{Reactions}
+👍 
+
+[02/16/2024 15:13] christianalthea
+Most wardens are using private channels to communicate with the Althea team, would you be able to use one of those?
+
+{Reactions}
+🫡 
+
+[02/16/2024 15:16] christianalthea
+Althea-L1 will be its own L1 chain and likely will not interact with any L2s.
+
+{Reactions}
+👍🏻 
+
+[02/16/2024 15:32] shealtielanz
+Thanks
+
+
+[02/16/2024 16:58] 0xmtf
+@Christian | Althea is the cosmos-sdk protocol already audited or is this coming in the future (L1 code)?
+
+
+[02/16/2024 17:40] christianalthea
+Not yet audited
+
+
+[02/16/2024 18:35] 0xsimeon
+So revenue is only coming in from this source?
+
+
+[02/16/2024 19:09] christianalthea
+In the initial deployments of Liquid Infrastructure yes, but other deployments are likely to have different sources of revenue. Ultimately from the Liquid Infrastructure protocol perspective the LiquidInfrastructureNFTs are the source of revenue.
+
+
+[02/16/2024 19:44] 0xsimeon
+Hi, @Christian | Althea 
+What are Liquid Infrastructure Accounts?  Also, how does the tryRecover() process work? EVM<>Cosmos?
+
+
+[02/16/2024 20:17] christianalthea
+Althea-L1 will have some functionality that works on accounts outside of the EVM it runs. Some of these accounts will be used for Liquid Infrastructure, and all of this extra functionality will be used to fund the LiquidInfrastructureNFTs. For the purposes of the audit it is sufficient to know that the LiquidInfrastructureNFTs will receive balances of ERC20 tokens and you can safely ignore the Cosmos functionality. `tryRecover()` will be part of the Cosmos functionality.
+
+
+[02/16/2024 21:22] hgq2wnl
+Hi @Christian | Althea , may you please give some examples of what kind of account/user would be an approved holder of  LiquidInfrastructureERC20? Or a rough flow of the eventual KYC process before one may hold LiquidInfrastructureERC20. Thanks,
+
+
+[02/17/2024 04:05] 0xabhay.
+@Christian | Althea  any ERC20 token is allowed?
+
+
+[02/17/2024 04:29] poeaudits
+Read the contest page
+
+
+[02/17/2024 05:35] 0xabhay.
+_beforeMintOrBurn and _afterTokenTransfer who will call these functions?
+
+
+[02/17/2024 05:39] tayzver
+Those are internal functions that are called by the transfer/mint functions
+
+
+[02/17/2024 05:41] tayzver
+_beforeMintOrBurn is called by _beforeTokenTransfer which is called in the transfer functions right before the balances get updated
+
+
+[02/17/2024 05:42] tayzver
+_afterTokenTransfer is called on the same transfer functions but after the balances get updated
+
+
+[02/17/2024 06:02] 0xabhay.
+got it :0
+
+
+[02/17/2024 10:05] mrudenko
+@Christian | Althea are you going to support erc777?
+
+
+[02/17/2024 10:08] jvorex
+not atm
+
+
+[02/17/2024 11:41] franklin4121
+@Christian | Althea @Justin | Althea  please what are `ThresholdErc20` and `ThresholdAmount`
+
+
+[02/17/2024 12:27] 0xabhay.
+ThresholdErc20: no of Erc20 token owned by the NFT contract,  ThresholdAmount: the amount of each erc20 token owned by the NFT contract
+
+
+[02/17/2024 13:28] 0xabhay.
+setThresholds function is for adding the token and amount of the token?
+
+
+[02/17/2024 17:06] guy_in0xnito
+Where do users interact with the protocol?
+
+
+[02/17/2024 19:16] .justuzair
+Need to ask some questions but I saw that the sponsors have been offline for quite some time
+
+
+[02/17/2024 19:16] .justuzair
+Any other dev from Althea I can talk to or is just the 2 of the sponsors??
+
+
+[02/17/2024 19:52] gladita
+Is anyone else getting the error that you must include the line number in your github link when you are including the line number?
+
+
+[02/17/2024 19:53] 0xsl1
+you do understand that you are basically showing your finding?
+
+
+[02/17/2024 19:54] rspadi
+Who can be approved as holder? Only EOA or also contract accounts?
+
+
+[02/17/2024 19:54] gladita
+I just want to resolve the problem... if seeing a link to that one line helps someone find something, I don't really care
+
+
+[02/17/2024 19:54] 0xsl1
+i mean… there is also a title but whatever
+
+
+[02/17/2024 19:55] 0xsl1
+and remove C9 from the link
+
+
+[02/17/2024 19:55] 0xsl1
+that should solve it
+
+
+[02/17/2024 21:49] shealtielanz
+i'm confused, why can't i see this functions in the repo i cloned?
+
+
+[02/17/2024 22:01] tayzver
+Wdym
+
+
+[02/17/2024 22:02] tayzver
+Are you referring to the transfer function?
+
+
+[02/17/2024 22:17] .justuzair
+Who can I ask questions about the smart contracts apart from  @Justin | Althea @Christian | Althea 
+?
+Because they have not been responding and have been offline
+
+
+[02/17/2024 22:17] shealtielanz
+yes sorry for delay
+
+
+[02/17/2024 22:18] shealtielanz
+i understand it imports oz erc but concerning the logic spoken about above, i can't see it in any of the contracts
+
+
+[02/17/2024 22:23] jvorex
+they will respond when they're available
+
+
+[02/17/2024 22:24] .justuzair
+I hope they will be soon I started a private thread more than 12-14hrs back about some confusing things and I wanted to confirm with them and then move on with auditing
+
+
+[02/17/2024 22:26] jvorex
+ye they will. just move on to other sections of the cb in the meantime
+
+
+[02/17/2024 23:36] aripse
+Does anyone understand why the LiquidERC20 withdrawBalances from NFT ? Don’t understand why NFT would have tokens in it… And if they can, what would be the benefit for an NFT holder to share the benefits with all holders of LiquidERC20 tokens… I am really new with real estate protocol, some concepts are beyond me…
+
+
+[02/17/2024 23:47] tayzver
+The holder would be the contract itself for example
+
+
+[02/18/2024 02:16] thesavageteddy
+what is the point of burning tokens in `burnAndDistribute()` and `burnFromAndDistribute()`?
+
+
+[02/18/2024 02:55] christianalthea
+The KYC process would just be needed to identify relevant holders of the token, and would probably just be an information collection process where an identity is matched with a wallet address. Then the approveHolder() function would be called with that wallet address.
+
+
+[02/18/2024 02:56] christianalthea
+Any ERC20 vetted by the protocol manager, and we have the requirement that the distributableERC20s can't have rebasing balances or anything else where the LiquidInfrastructureERC20 might have an unreliable balance of tokens.
+
+
+[02/18/2024 02:59] christianalthea
+These are things that will be used by the Cosmos side of Althea-L1, and will determine how tokens flow into the LiquidInfrastructureNFT. They can be ignored for this audit.
+
+{Reactions}
+👍 
+
+[02/18/2024 02:59] christianalthea
+This is incorrect
+
+
+[02/18/2024 03:00] christianalthea
+There will be a frontend that presents the transactions to users for signing. The protocol manager will be the owner of the contract and responsible for minting and approving holders and bringing new LiquidInfrastructureNFTs into the system, users will trade the ERC20 token or hold it and passively collect revenue
+
+
+[02/18/2024 03:02] christianalthea
+Any address is able to be a holder. If a DEX were to have a liquidity pool for the token that pool/DEX would need to be approved.
+
+
+[02/18/2024 03:03] christianalthea
+The transfer/mint functions are defined in a parent contract called ERC20.sol, and it's written by OpenZeppelin. I believe the specific version used is this one: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.3.1/contracts/token/ERC20/ERC20.sol
+
+{Embed}
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.3.1/contracts/token/ERC20/ERC20.sol
+openzeppelin-contracts/contracts/token/ERC20/ERC20.sol at v4.3.1 · ...
+OpenZeppelin Contracts is a library for secure smart contract development. - OpenZeppelin/openzeppelin-contracts
+Code4rena - ARCHIVE-Q1-2024 - althea-feb13 [1204153452733800448].txt_Files/openzeppelin-contracts-CBA6A
+
+
+[02/18/2024 03:04] mrpotatomagic
+@Christian | Althea please check private thread
+
+
+[02/18/2024 03:07] christianalthea
+So there are multiple opt-in parts of the Liquid Infrastructure protocol which become more relevant when transactions happen on Althea-L1 with its extra CosmosSDK functionality. For the purposes of the Liquid Infrastructure protocol, the LiquidInfrastructureNFTs are meant to be sources of revenue and represent tokenized real world assets. On Althea-L1 the first devices like this will be tokenized router accounts involved in an Althea internet network, they will passively accrue revenue in stablecoins. If the owner of that device decides to tokenize it, then it will have a corresponding LiquidInfrastructureNFT which will eventually receive the revenue that device accrues.
+
+From there it's possible to bundle multiple tokenized assets like this under a LiquidInfrastructureERC20 and have the revenue from each LiquidInfrastructureERC20 periodically distributed to holders.
+
+
+[02/18/2024 03:09] christianalthea
+These are for holders who for whatever reason might not want to hold the LiquidInfrastructureERC20 (taxes, legal reasons are a couple things that come to mind). If they have no way to get rid of their balances then they need to destroy their wallet, which would likely be a huge headache. The "AndDistribute()" part makes it easier to call, because burning is restricted if too much time has past and a distribution needs to happen.
+
+{Reactions}
+thankyou 
+
+[02/18/2024 03:23] guy_in0xnito
+So liq...NFT .sol will be deployed for each asset owned by a user &  the NFT. Will be used in liERC20.Sol by 'addManagedNFT'  ?
+
+
+[02/18/2024 03:41] 0xdemonnn
+created a private thread, pls check @Christian | Althea @Justin | Althea
+
+{Reactions}
+👍 
+
+[02/18/2024 03:41] christianalthea
+Yes, that is the expected process.
+
+
+[02/18/2024 03:51] 0xabhay.
+One Nft can only hold one erc20 token?
+
+
+[02/18/2024 03:54] christianalthea
+The thresholdERC20s and thresholdAmounts on the LiquidInfrastructureNFT are only used by Althea-L1 and control how the LiquidInfrastructureNFT receives balances.
+
+
+[02/18/2024 03:55] christianalthea
+A LiquidInfrastructureNFT should be able to receive ERC20 balances from any ERC20, but this is not always relevant to the LiquidInfrastructureERC20's withdrawFromManagedNFTs function.
+
+
+[02/18/2024 06:16] thisvishalsingh
+What do you mean by `balanceOf` @Christian | Althea
+
+
+[02/18/2024 06:55] guy_in0xnito
+So the LIQ.INFA.ERC20.sol. Pool does it hold various erc20 tokens   for various nft representing assets ?
+
+
+[02/18/2024 09:31] aripse
+Let’s talk more concretely. You have a router, tokenize it, you now have a liquidNFT. 
+- Who and why send money to this NFT ? Is there an automation in place to give internet access as soon as the money is sent by an address ? Is ISP sharing the income to every routers ?
+- That’s your router and your NFT, in what world you want to give it to another person (who hold the liquidERC20) ?
+- Even if you’re also the owner of liquidERC20, what interest do you have to share all money collected with others holders ? Is it a "shares" system like in classic finance ?
+- What prevent a user to sell his NFT and unplug the router ? Does the NFT is sold with the material ? Or all routers is hold by companies and they only sell routers to other companies and they never want to unplug a router ?
+
+
+[02/18/2024 10:19] moeid3
+hi 
+I have a question
+in 
+https://github.com/code-423n4/2024-02-althea-liquid-infrastructure/blob/bd6ee47162368e1999a0a5b8b17b701347cf9a7d/liquid-infrastructure/contracts/LiquidInfrastructureERC20.sol#L224
+there is a transfer implementation of your specific erc20 token that we can't access right now to read through. Should we pretend that these transfer functions are not unusual?
+
+{Embed}
+https://github.com/code-423n4/2024-02-althea-liquid-infrastructure/blob/bd6ee47162368e1999a0a5b8b17b701347cf9a7d/liquid-infrastructure/contracts/LiquidInfrastructureERC20.sol
+2024-02-althea-liquid-infrastructure/liquid-infrastructure/contract...
+Contribute to code-423n4/2024-02-althea-liquid-infrastructure development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2024 - althea-feb13 [1204153452733800448].txt_Files/7c0195f6-b551-4325-a27d-ce1daf4b8aad-B5273
+
+
+[02/18/2024 10:26] thesavageteddy
+why restrict `withdrawBalances` in the NFT contract to only be called by owner or an approved msg.sender?
+
+
+[02/18/2024 11:36] jennifer37_32959
+I think those ERC20 tokens are revenue token. From the description, revenue tokens could be USDC/USDT/DAI.
+
+
+[02/18/2024 11:53] moeid3
+Oh great
+I knew they were some other tokens but didn't know what are they exactly
+Thank you
+
+
+[02/18/2024 11:54] jennifer37_32959
+welcome
+
+
+[02/18/2024 12:19] jes16jupyter
+Hi, I have a question : will the distribution process occur on eth mainnet or the network the contract is deployed on?
+
+
+[02/18/2024 12:54] aripse
+All is happening of Althea L1.
+
+{Reactions}
+thankyou 
+
+[02/18/2024 13:31] vikqaz
+it makes me think that USDT/USDC/DAI will be bridged on AL1?
+
+{Reactions}
+👆 
+
+[02/18/2024 13:33] jes16jupyter
+Then the bridged token is official or just a copy-paste of the contract
+
+
+[02/18/2024 13:36] jes16jupyter
+I am not quite sure with this one. Will USDC company officially launch the token on AL1 or it's just another token owned by the team/project.
+
+{Reactions}
+👀 
+
+[02/18/2024 13:41] aripse
+Yup, but if I understood well, the distribution and all the protocol is happening on Althea blockchain. You would be able to buy stablecoin on ethereum and bridge your stablecoin between chains. But with all the Cosmos SDK dependencies, it seems illogical that this protocol could be executed on Ethereum.
+
+
+[02/18/2024 14:47] vikqaz
+why it could not be executed on ethereum? what makes you think this  my brother?
+
+
+[02/18/2024 14:54] aripse
+Lots of comment in the code mention Cosmos SDK. I never used it but I’ve thought it is for custom blockchain or Cosmos IBC, not ethereum. Moreover, I never see this kind of recovery function in any EVM chain.
+
+
+[02/18/2024 14:55] aripse
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q1-2024 - althea-feb13 [1204153452733800448].txt_Files/image-F7B77.png
+
+
+[02/18/2024 14:57] vikqaz
+yup, upon emission of this even, some process will be executed in the dapp.
+
+Furthermore, it is explicitly mentioned that this protocol will be executed on AltheaL1 using EVM compatibility layer.
+
+{Reactions}
+👍 
+
+[02/18/2024 16:29] christianalthea
+`balanceOf()` is a function on the ERC20 standard which returns the user's current of the ERC20 it is called on.
+
+{Reactions}
+🫡 
+
+[02/18/2024 16:31] christianalthea
+LiquidInfrastructureERC20 will withdraw the balances of the `distributableERC20s[]` which any of its `ManagedNFTs` may hold. After withdrawing the distribution process can begin to send those tokens to all the holders of the LiquidInfrastructureERC20
+
+
+[02/18/2024 16:41] christianalthea
+The Althea protocol enables peer-to-peer payments for internet service, and it will operate completely with a regular blockchain account. Althea does not need Liquid Infrastructure to run, these devices must send/receive tokens to participate in the network otherwise their internet access will be restricted. If someone is managing lots of Althea devices, they can tokenize their devices for easier management. With some new functionality that Althea-L1 will provide, the LiquidInfrastructureNFTs can be configured to send most of the tokens held by the device to a NFT contract (you want some working capital so that the device can always settle any debits it might create in its normal operation).
+
+If someone is deploying an entire Althea network and trying to handle complex ownership arrangements (e.g. you have several investors or maybe lots of smaller investors), distributing the revenue from the network is a large accounting burden. The LiquidInfrastructureERC20 can be used to make all of this simpler and pay out to all the involved parties in an automated fashion with little effort required by anyone.
+
+If you're the "owner" of the LiquidInfrastructureERC20 then you're managing the whole system. You may have legal responsibilities to ensure a fair payout between all the holders, the balance held by all the holders is very similar to shares.
+
+All LiquidInfrastructureNFTs involved with a LiquidInfrastructureERC20 *must* be owned by the ERC20. A user cannot "sell" the NFT because they do not hold it. If they unplug their device then they will no longer receive the service they're involved in.
+
+
+[02/18/2024 16:42] christianalthea
+That line involves calling the `transfer()` function of the revenue ERC20. It would depend on what tokens are being used as the revenue currency (e.g. USDC/USDT/WETH, etc...)
+
+
+[02/18/2024 16:44] christianalthea
+The owner should be the one managing their tokens. It should not be up to uninvolved parties to transfer token balances to the owner of the NFT.
+
+
+[02/18/2024 16:44] christianalthea
+Yes, we're planning on the first deployments to use USDC bridged from Ethereum Mainnet via Gravity Bridge
+
+{Reactions}
+👍🏻 
+
+[02/18/2024 16:45] christianalthea
+There will be a simple bridged representation of the token deployed as an ERC20 with only the basic ERC20 functionality.
+
+
+[02/18/2024 16:48] christianalthea
+Ethereum mainnet is not well suited for Althea, because of the gas fees. Althea as a protocol is intended to transact in terms of $0.05 - $0.25 many many times per day as users use internet and settle debts with the upstream providers. Althea-L1 will have much lower gas fees and facilitate lots of these microtransactions in a special channel to ensure the protocol operates efficiently. Because we're already planning on deploying on Althea-L1, it makes sense to have Liquid Infrastructure deployed there too.
+
+{Reactions}
+🫡 
+
+[02/18/2024 16:53] mrpotatomagic
+@Christian | Althea please check private thread
+
+
+[02/18/2024 17:06] _firebean_
+hi is there any protocol goal to transfer tokens first before distributing tokens?
+
+
+[02/18/2024 17:44] christianalthea
+I don't understand what you mean with "transfer tokens first"
+
+
+[02/18/2024 17:50] 0xabhay.
+for example ->Imagine you're an owner of LiquidInfrastructureERC20 representing electric car chargers. You have some LiquidInfrastructureNFTs that manage these chargers. Now, another individual deploys another LiquidInfrastructureERC20 to represent Althea networks. They also have their own set of LiquidInfrastructureNFTs managing their networks. In this scenario, each ERC20 manages its assets independently, with its own set of NFTs for management and payouts.  is this correct ?
+
+
+[02/18/2024 17:51] 0xaman.
+@Christian | Althea please check private thread
+
+
+[02/18/2024 19:14] franklin4121
+what exactly is `erc20EntitlementPerUnit` ??
+
+
+[02/18/2024 23:27] christianalthea
+Yes that seems like a good design. I would anticipate different asset types would be kept separate.
+
+
+[02/18/2024 23:29] christianalthea
+ercEntitlementPerUnit is used to figure out how much a holder is entitled to of the distributableERC20s based on the number of LiquidInfrastructureERC20 tokens they hold. The indices should match up perfectly with the distributableERC20s
+
+{Reactions}
+👍 
+
+[02/18/2024 23:32] thesavageteddy
+why isn't the `withdrawFromManagedNTFs()` function in infraERC20 restricted then?
+
+
+[02/19/2024 11:40] zxriptor
+anyone can trigger withdrawal, it is safe since recipient will be liq infra ERC20 contract only
+
+
+[02/19/2024 11:41] thesavageteddy
+well then same goes for `withdrawBalances()` as it transfers to the owner of the NFT
+
+
+[02/19/2024 11:42] zxriptor
+which is the same liq infra ERC20 contract
+
+
+[02/19/2024 11:43] thesavageteddy
+yeah so i was confused why Christian says this
+
+
+[02/19/2024 11:44] zxriptor
+so only owner of NFT (i.e. ERC20 contract) can withdraw reward tokens. but everyone can force that operation. that is how those two functions work together
+
+
+[02/19/2024 11:47] thesavageteddy
+hmm ok
+
+
+[02/19/2024 12:21] 0xabhay.
+can one liquidNft managed by two different liquiderc20?
+
+
+[02/19/2024 12:26] visualbits
+No
+
+{Reactions}
+👍 
+
+[02/19/2024 12:27] thesavageteddy
+shouldn’t be since the liquiderc20 checks ownerOf the token
+
+{Reactions}
+👍 
+
+[02/19/2024 12:50] 0xabhay.
+liquidERC20 should not support any other NFT than liquidNFT?
+
+
+[02/19/2024 12:51] thesavageteddy
+yeah
+
+
+[02/19/2024 15:16] christianalthea
+The LiquidInfrastructureNFT has multiple purposes. It can be used to make managing your device accounts easier, in which case it's still your account and only you should manage it. It can also be used to distribute revenue to a LiquidInfrastructureERC20 in which case anyone on the protocol should be able to pay gas to get the tokens owed to them and everyone else.
+
+
+[02/19/2024 15:17] christianalthea
+We're expecting the ERC20 owner to vet the NFT contract before adding it
+
+{Reactions}
+✅ (3) 
+
+[02/19/2024 15:26] 0xabhay.
+address[] private distributableERC20s; this can have any erc20 token? ex usdc, usdt, weth
+
+
+[02/19/2024 16:41] christianalthea
+Yes, it is set by the ERC20 owner
+
+
+[02/19/2024 16:44] christianalthea
+The ERC20 owner is expected to vet the ERC20s put in that array
+
+
+[02/19/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺wardens The **Althea Liquid Infrastructure** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements  for regular updates on how the audit is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a Contest-Admin if you have questions along the way!
+
+
+[02/19/2024 20:28] haxatron1
+I can't believe the number of reported issues for 350 lines of code
+
+
+[02/19/2024 20:28] haxatron1
+This is unbelievable
+
+
+[02/19/2024 20:29] haxatron1
+700+
+
+{Reactions}
+4739_Skeletor (21) 
+
+[02/19/2024 20:30] 0xsl1
+just check the overall quality and you will understand
+
+{Reactions}
+😂 (9) 
+
+[02/19/2024 21:06] .justuzair
+Where do you check for number of reported issues??
+
+
+[02/19/2024 21:11] pronobis4
+backstage role
+
+
+[02/19/2024 21:13] .justuzair
+Oh I see
+
+
+[02/19/2024 21:14] masol_66728
+another 10$ reward incoming
+
+{Reactions}
+🤣 (13) 
+
+[02/19/2024 21:14] .justuzair
+😂😂
+
+
+[02/19/2024 21:43] forgebyola
+more like 30c:4739_Skeletor:
+
+
+[02/19/2024 22:17] rouhsamad
+How many hm did you manage to find guys
+
+
+[02/20/2024 04:03] jes16jupyter
+haha
+
+
+[02/20/2024 12:03] aripse
+Not enough I’m afraid…
+
+
+[02/20/2024 12:04] aripse
+But let’s hope. 😁
+
+
+[02/20/2024 18:42] nzlatev7
+Do you know when the results will be released?
+
+
+[02/20/2024 18:47] nzlatev7
+Do the contests that are ended need to be judged before that🤔
+
+
+[02/20/2024 19:56] max10afternoon
+https://docs.code4rena.com/structure/our-process
+
+{Embed}
+https://docs.code4rena.com/structure/our-process
+Audit timeline
+This is a high level overview of the C4 audit timeline. We have an increasingly detailed operational manual in Notion.
+
+{Reactions}
+👍 (5) C4Keycap 
+
+[03/03/2024 11:43] myrault_
+Is there any progress?
+
+
+[03/03/2024 13:14] visualbits
+Judging
+
+
+[03/03/2024 14:17] jes16jupyter
+I need this or ai-arena for my last step on backstage haha
+
+
+[03/07/2024 20:33] xkeywordx
+Hello guys, any news about this?
+
+
+[03/08/2024 05:33] .ready_player_2
+https://discord.com/channels/810916927919620096/810929015509483554/1214641140087922819
+
+
+[03/08/2024 05:34] .ready_player_2
+With no backstage access, I guess it's still in the judging phase along with ai_arena
+
+
+[03/11/2024 13:10] 0x11singh99
+today
+
+
+[03/11/2024 13:11] 0xabhay.
+result?
+
+
+[03/11/2024 13:14] 0x11singh99
+yes most probably since icon appearing on profiles
+
+{Reactions}
+✅ (2) 
+
+[03/11/2024 13:19] jes16jupyter
+not bad. I've got backstage since today.
+
+
+[03/11/2024 15:46] thebrittfactor
+🤑 🎉 Awards for **Althea Liquid Infrastructure**:
+
+$4,541.88 USDC » Fassi_Security (@bronze_pickaxe, @mxuse)
+$3,542.49 USDC » @max10afternoon
+$1,106.55 USDC » @web3pwn
+$864.44 USDC » @0xJoyBoy03
+$511.85 USDC » @SpicyMeatball
+$478.06 USDC » @0xAadi
+$391.06 USDC » @MrPotatoMagic
+$332.01 USDC » @BowTiedOriole
+$329.86 USDC » @Breeje
+$329.86 USDC » @JohnSmith
+$329.86 USDC » @rsam_eth
+$282.74 USDC » @nuthan2x
+$275.03 USDC » @Krace
+$275.03 USDC » @SovaSlava
+$275.03 USDC » @d3e4
+$267.84 USDC » @CaeraDenoir
+$267.84 USDC » @0xmeera
+$267.84 USDC » @juancito
+$267.84 USDC » @kutu
+$242.11 USDC » PumpkingWok
+$242.11 USDC » @rokinot
+$227.96 USDC » @ZanyBonzy
+$167.78 USDC » @peanuts
+$155.22 USDC » @TheSavageTeddy
+$151.16 USDC » @0x11singh99
+$127.63 USDC » @0xSmartContractSamurai
+$121.23 USDC » @zhaojohnson
+$117.63 USDC » @jesjupyter
+$116.28 USDC » @c3phas
+$116.28 USDC » @dharma09
+$106.29 USDC » @Limbooo
+$106.29 USDC » @aslanbek
+$106.29 USDC » @pkqs90
+$104.73 USDC » @0xloscar01
+$87.74 USDC » @0xpiken
+$87.74 USDC » @matejdb
+$87.74 USDC » @n0kto
+$80.56 USDC » @Tendency
+$80.56 USDC » @thank_you
+$64.41 USDC » @JrNet
+$60.42 USDC » @Topmark
+$57.21 USDC » DarkTower (@Kenzo, @0xrex, @haxatron)
+$53.05 USDC » @atoko
+$38.68 USDC » @0xbrett8571
+$38.68 USDC » @jcfichtner
+$38.68 USDC » @PoeAudits
+$38.68 USDC » clara
+
+{Reactions}
+👍 (4) 
+
+[03/11/2024 15:47] thebrittfactor
+$32.91 USDC » @0xshivay
+$32.91 USDC » @DanielArmstrong
+$32.91 USDC » @csanuragjain
+$32.91 USDC » @turvy_fuzz
+$25.73 USDC » AM (@StefanAndrei, @0xmatei)
+$25.73 USDC » @kirkeelee
+$25.73 USDC » @KmanOfficial
+$25.73 USDC » @agadzhalov
+$25.73 USDC » @imare
+$25.73 USDC » @kartik_giri_47538
+$25.73 USDC » @offside0011
+$25.73 USDC » @xchen1130
+$25.73 USDC » @ziyou-
+$11.35 USDC » @lsaudit
+$7.18 USDC » @0xSpenzar
+$7.18 USDC » @0xlemon
+$7.18 USDC » @Babylen
+$7.18 USDC » @Brenzee
+$7.18 USDC » CodeWasp (@kuprum, @slylandro_star, @spaghetticode_sentinel, @audithare)
+$7.18 USDC » @Fitro
+$7.18 USDC » @Honour
+$7.18 USDC » @Myrault
+$7.18 USDC » @ReadyPlayer2
+$7.18 USDC » @Tigerfrake
+$7.18 USDC » @cryptphi
+$7.18 USDC » @gesha17
+$7.18 USDC » @kinda_very_good
+$7.18 USDC » @krikolkk
+$7.18 USDC » miaowu
+$7.18 USDC » parlayan_yildizlar_takimi (@ulas, @caglankaan, @ata)
+$7.18 USDC » @petro_1912
+$7.18 USDC » @pontifex
+$7.18 USDC » @psb01
+$7.18 USDC » @pynschon
+$7.18 USDC » @shaflow2
+$7.18 USDC » slippopz
+$7.18 USDC » @nervouspika
+
+🏁 Findings summary
+-------------------------------------
+High risk findings: 1 unique (50 total)
+Med risk findings: 4 unique (74 total)
+Gas reports: 4 (Best: 0x11singh99)
+QA reports: 10 (Best: ZanyBonzy)
+Advanced analysis reports: 10 (Best: 0xAadi)
+
+
+[03/11/2024 15:48] thebrittfactor
+Awards will be distributed on Polygon within the next week. Congratulations all! 💸 💸 💸
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🎉 (6) 
+
+[03/11/2024 16:05] jes16jupyter
+50 highs?
+
+
+[03/11/2024 16:05] kirkeelee
+Duplicates.
+
+
+[03/11/2024 16:12] jes16jupyter
+Thanks, so its 1h + 4m right?
+
+
+[03/11/2024 16:14] kirkeelee
+Yes.
+
+{Reactions}
+thankyou 
+
+[03/11/2024 16:15] jes16jupyter
+sad 3m only gets me $120
+
+
+[03/11/2024 16:23] poeaudits
+Sad my finding was invalidated. Would contest if it wasn't 500 dollars lol.
+
+
+[03/11/2024 17:05] nzlatev7
+when the report will be public?
+
+
+[03/11/2024 20:06] moeid3
+Yes yes yesssss (funnyValentine way)
+
+
+[03/12/2024 03:38] agilejune.cp
+all of my two submissions are not valid.
+how can i check my submission with judge member for now? I was sure it's valid.
+
+
+[03/12/2024 04:47] web3pwn
+Oh 3rd place! Thats exciting
+
+{Reactions}
+🔥 (4) 
+
+[03/12/2024 07:25] tigerfrake
+Sure🧐? That's a 'tough one'
+
+
+[03/12/2024 09:01] agilejune.cp
+yes, I submitted only two issues, were you in charge of judge ?
+
+
+[03/12/2024 09:31] tigerfrake
+Naah, I just learnt early enough that you can never be more certain on matters submissions.
+
+Furthermore, if you feel that some of your findings were wrongly invalidated, there's always room to raise such matters but only once the report has been made public.
+
+See Awards notification above👆
+
+
+[03/12/2024 20:08] xkeywordx
+Can we understand why our submissions got invalidated? I submitted 2 issues here. For one I was kind of not sure, but for 1 I was pretty sure it is indeed a finding. With who can we discuss?
+
+
+[03/12/2024 20:12] xkeywordx
+any @admin?
+
+
+[03/12/2024 20:13] 0xsl1
+You have to wait for the report to be public
+
+
+[03/12/2024 20:13] haxatron1
+Unfortunately you have to eait for the report
+
+
+[03/12/2024 20:13] haxatron1
+To be public
+
+
+[03/12/2024 20:13] haxatron1
+Which will take about 1 month
+
+
+[03/12/2024 20:13] haxatron1
+Dont ask me why I also dislike this rule but this rule has to be followed
+
+
+[03/12/2024 20:14] xkeywordx
+...
+
+
+[03/12/2024 20:14] xkeywordx
+I am still waiting on the Curves report to be published and that competition took place in January
+
+{Reactions}
+🫂 (4) 
+
+[03/12/2024 20:18] haxatron1
+Feel for you man
+
+
+[03/12/2024 20:18] haxatron1
+Hope that report gets published soon
+
+
+[03/12/2024 20:34] poeaudits
+Can you still appeal a finding after the report is published?
+
+
+[03/12/2024 20:36] jvorex
+no unfortunately
+
+
+[03/12/2024 20:40] poeaudits
+Can I DM you for something real quick?
+
+
+[03/12/2024 20:40] jvorex
+sure but if it's about findings/submissions sorry i can't help with that one
+
+
+[03/12/2024 23:24] johnsmith1623
+you guys with your invalid issues, I don't get it.
+why don't you just ask here?
+when I did not have backstage role, I just asked, like there is a piece of code, I think there is such an issue, tell me where I am wrong,
+and sometimes other wardens answered, sometimes judges answered.
+like code is already public and your issues are invalid, you do not disclose anything.
+am I missing something?
+
+{Reactions}
+👍 (2) 
+
+[03/13/2024 03:47] 0xsmartcontractsamurai
+Well I had none of my 11 H/M findings validated it seems, which is kinda super weird, but you know, anything's possible...
+I think getting a backstage role so that I can explain my findings to judges would be the next critical step for me.
+Almost guaranteed at least one of my H/M findings is valid.
+
+But I'm still happy to get some pizza $$$ for my QA and GAS findings.
+
+
+[03/13/2024 13:11] itsmetechjay
+@0xSecuri, I have deleted your message because while the awards have been announced, the findings repo and report have not been published.  Please treat all findings as private until then.
+
+{Reactions}
+👍 
+
+[03/13/2024 13:12] johnsmith1623
+1. Issues found by bot are invalid, check L-7 in bot report
+2. Admin may disapprove blacklisted address, so it is not a problem.
+
+
+[03/13/2024 13:15] johnsmith1623
+so you are saying we are not allowed to discuss public code? These are just known issues.
+
+
+[03/13/2024 13:16] itsmetechjay
+You are not allowed to publicly discuss findings submitted to C4 audits until the report is published and the findings repo is public.
+
+
+[03/13/2024 13:25] johnsmith1623
+Was there findings or just questions he could ask during contest?
+I saw only links to public code.
+
+
+[03/13/2024 13:27] itsmetechjay
+From what I could tell, they were asking for feedback for the findings they submitted.
+
+
+[03/13/2024 13:43] johnsmith1623
+Yeah, it depends on perspective.
+From my point of view it was a question on  how the code works.
+Well, you did what is right by you, so all is good.
+Please don't shoot me for trying to help.
+
+{Reactions}
+🤣 
+
+[03/22/2024 21:39] vikqaz
+When should we expect the report to be published?
+
+
+[03/27/2024 15:51] masol_66728
+was this payed out ?
+
+
+[03/28/2024 11:58] _paperparachute
+https://discord.com/channels/810916927919620096/810929015509483554/1217581412144644187
+
+
+[03/28/2024 12:13] masol_66728
+Can you help me? I did not receive my payment.
+
+
+[03/28/2024 12:13] _paperparachute
+Please create a [helpdesk request](https://code4rena.com/help)
+
+
+[04/10/2024 21:27] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted on Friday, 19 April 2024. Please make sure to grab anything you might need before then.
+
+
+[04/11/2024 06:26] aman_1602
+How I can get audits submitted by others
+
+
+[04/11/2024 17:51] itsmetechjay
+If you mean being able to see the findings from others, you'll be able to see that once the final report is out and we'll make the findings repo public.
+
+
+[04/11/2024 18:29] aman_1602
+Ohk
+
+
+[04/16/2024 20:52] poeaudits
+Correct me if I am wrong, but now that the report is out I can discuss the report/findings? Just to be clear, I don't expect any changes or anything after the fact. If I am wrong about posting this here feel free to delete it.
+
+https://github.com/code-423n4/2024-02-althea-liquid-infrastructure-findings/issues/724
+I disagree with this discussion since it completely ignored the decimals issue that was included in some of the duplicated reports. The issue isn't that significant if the output token also has 1e18 decimals, but if it has fewer, like USDC which was mentioned in the README, the tokens effectively get locked in the contract, and it requires basically destroying the contract to retrieve them.
+
+
+[04/18/2024 20:24] itsmetechjay
+ℹ️ Reminder: this channel will be deleted in 24 hours.
+
+
+==============================================================
+Exported 276 message(s)
+==============================================================
